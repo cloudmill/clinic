@@ -32,7 +32,7 @@ $(document).scroll(function(e){
         }
         
     }
-    var top = $(window).scrollTop();
+    /* var top = $(window).scrollTop();
     if(last_scroll > top){
         $('.header').css('top',0)
         $('.wrapper').addClass('header_fixed')
@@ -41,7 +41,7 @@ $(document).scroll(function(e){
         $('.header').css('top',-140)
         $('.block_menu').removeClass('active')
     }   
-    last_scroll = $(window).scrollTop();
+    last_scroll = $(window).scrollTop(); */
 })
 
 
