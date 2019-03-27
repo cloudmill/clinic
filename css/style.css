@@ -104,7 +104,7 @@ body {
   color: #57a8c6 !important;
 }
 .wrapper a.dashed-black {
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed #6e6e6e;
 }
 .wrapper a.dashed-black:hover {
   border-bottom: 1px solid #57a8c6;
@@ -484,13 +484,14 @@ body {
   left: 50%;
   transform-origin: center center;
   transform: translate(-50%, -50%) rotate(-45deg);
-  margin-top: -4px;
-  width: 13px;
-  height: 3px;
+  margin-top: -2px;
+  width: 9px;
+  border-radius: 1px;
+  height: 2px;
 }
 .wrapper .arrow-gray button:after {
   transform: translate(-50%, -50%) rotate(45deg);
-  margin-top: 4px;
+  margin-top: 3px;
 }
 .wrapper .arrow-gray button.slick-next:before {
   transform: translate(-50%, -50%) rotate(45deg);
@@ -1632,8 +1633,8 @@ body {
   margin: auto;
   width: 750px;
   text-align: center;
-  font: 14px/30px 'ProximaNova';
-  color: black;
+  font: 16px/28px 'ProximaNova';
+  color: #636363;
 }
 .wrapper .wrapper-content .section.comment .content .slider_comment .item p a,
 .wrapper .wrapper-blackhole .section.comment .content .slider_comment .item p a {
@@ -1935,7 +1936,11 @@ body {
 }
 .wrapper .wrapper-content .section.history,
 .wrapper .wrapper-blackhole .section.history {
-  padding: 70px 0;
+  padding-top: 70px;
+}
+.wrapper .wrapper-content .section.history .content_small h5,
+.wrapper .wrapper-blackhole .section.history .content_small h5 {
+  font: 15px/24px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.history .content,
 .wrapper .wrapper-blackhole .section.history .content {
@@ -2139,8 +2144,7 @@ body {
 }
 .wrapper .wrapper-content .section.why_we .content,
 .wrapper .wrapper-blackhole .section.why_we .content {
-  padding-top: 100px;
-  padding-bottom: 70px;
+  padding-top: 55px;
 }
 .wrapper .wrapper-content .section.why_we .content .row,
 .wrapper .wrapper-blackhole .section.why_we .content .row {
@@ -2228,17 +2232,22 @@ body {
   flex-basis: calc((100% - 320px)/3);
   padding-right: 80px;
 }
+.wrapper .wrapper-content .section.why_we .content > .row .item object,
+.wrapper .wrapper-blackhole .section.why_we .content > .row .item object {
+  margin-bottom: 13px;
+  height: 80px;
+}
 .wrapper .wrapper-content .section.why_we .content > .row .item h4,
 .wrapper .wrapper-blackhole .section.why_we .content > .row .item h4 {
   font: 600 14px 'ProximaNova';
   color: black;
   text-transform: uppercase;
   text-align: center;
-  margin: 20px 0;
+  margin: 17px 0;
 }
 .wrapper .wrapper-content .section.why_we .content > .row .item h5,
 .wrapper .wrapper-blackhole .section.why_we .content > .row .item h5 {
-  font: 15px 'ProximaNova';
+  font: 15px/24px 'ProximaNova';
   color: black;
   text-align: center;
 }
@@ -2371,13 +2380,14 @@ body {
 }
 .wrapper .wrapper-content .section.why_we .mission .content_small h4,
 .wrapper .wrapper-blackhole .section.why_we .mission .content_small h4 {
-  font: 16px 'ProximaNova';
+  font: 16px/28px 'ProximaNova';
   text-align: center;
-  color: black;
+  color: #151515;
 }
 .wrapper .wrapper-content .section.why_we .mission .content_small h4::before,
 .wrapper .wrapper-blackhole .section.why_we .mission .content_small h4::before {
   height: 3px;
+  transform: translate(0, 4px);
   width: 60px;
   margin: 40px auto;
 }
@@ -2388,6 +2398,10 @@ body {
 .wrapper .wrapper-content .section.why_we .mission + .content,
 .wrapper .wrapper-blackhole .section.why_we .mission + .content {
   padding-top: 0;
+}
+.wrapper .wrapper-content .section.why_we h5,
+.wrapper .wrapper-blackhole .section.why_we h5 {
+  font-size: 15px;
 }
 .wrapper .wrapper-content .section.rooms,
 .wrapper .wrapper-blackhole .section.rooms {
@@ -2412,6 +2426,10 @@ body {
 .wrapper .wrapper-blackhole .section.rooms .row .text h3 {
   font-weight: bold;
   text-align: left;
+}
+.wrapper .wrapper-content .section.rooms .row .text p,
+.wrapper .wrapper-blackhole .section.rooms .row .text p {
+  margin-top: 35px;
 }
 .wrapper .wrapper-content .section.rooms .row .slider,
 .wrapper .wrapper-blackhole .section.rooms .row .slider {
@@ -2625,6 +2643,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+.wrapper .wrapper-content .section.doctors .content .item .comment a,
+.wrapper .wrapper-blackhole .section.doctors .content .item .comment a,
+.wrapper .wrapper-content .section.doctors .content_midlle_big .item .comment a,
+.wrapper .wrapper-blackhole .section.doctors .content_midlle_big .item .comment a {
+  font-size: 12px;
+}
 .wrapper .wrapper-content .section.doctors .content .item .comment a:last-child,
 .wrapper .wrapper-blackhole .section.doctors .content .item .comment a:last-child,
 .wrapper .wrapper-content .section.doctors .content_midlle_big .item .comment a:last-child,
@@ -2632,6 +2656,7 @@ body {
   color: #57a8c6;
   display: flex;
   align-items: center;
+  border-bottom: 1px dotted #57a8c6;
   margin-left: 30px;
   position: relative;
 }
@@ -2649,11 +2674,20 @@ body {
   height: 15px;
   background-color: #6e6e6e;
 }
+.wrapper .wrapper-content .section.doctors .content .item .comment a:hover,
+.wrapper .wrapper-blackhole .section.doctors .content .item .comment a:hover,
+.wrapper .wrapper-content .section.doctors .content_midlle_big .item .comment a:hover,
+.wrapper .wrapper-blackhole .section.doctors .content_midlle_big .item .comment a:hover {
+  border-bottom: 1px solid #57a8c6;
+}
 .wrapper .wrapper-content .section.doctors .content .item > a,
 .wrapper .wrapper-blackhole .section.doctors .content .item > a,
 .wrapper .wrapper-content .section.doctors .content_midlle_big .item > a,
 .wrapper .wrapper-blackhole .section.doctors .content_midlle_big .item > a {
-  width: 140px;
+  width: 130px;
+  text-transform: none;
+  font-size: 15px;
+  height: 40px;
 }
 .wrapper .wrapper-content .section.doctors .content .item > a.hide,
 .wrapper .wrapper-blackhole .section.doctors .content .item > a.hide,
@@ -2820,6 +2854,10 @@ body {
 .wrapper .wrapper-blackhole .section.text.margt-50 {
   margin-top: 50px;
 }
+.wrapper .wrapper-content .section.text.mb-0,
+.wrapper .wrapper-blackhole .section.text.mb-0 {
+  margin-bottom: 0;
+}
 .wrapper .wrapper-content .section.text h1.ta-center,
 .wrapper .wrapper-blackhole .section.text h1.ta-center,
 .wrapper .wrapper-content .section.text h2.ta-center,
@@ -2980,10 +3018,14 @@ body {
 .wrapper .wrapper-blackhole .section.text p.mt-50 {
   margin-top: 50px !important;
 }
+.wrapper .wrapper-content .section.text h2,
+.wrapper .wrapper-blackhole .section.text h2 {
+  text-align: left;
+}
 .wrapper .wrapper-content .section.text h3,
 .wrapper .wrapper-blackhole .section.text h3 {
   font: bold 36px 'ProximaNova';
-  margin-bottom: 30px;
+  margin-bottom: 42px;
 }
 .wrapper .wrapper-content .section.text h4,
 .wrapper .wrapper-blackhole .section.text h4 {
@@ -2992,13 +3034,13 @@ body {
 }
 .wrapper .wrapper-content .section.text h5,
 .wrapper .wrapper-blackhole .section.text h5 {
-  font: bold 18px 'ProximaNova';
+  font: bold 18px/30px 'ProximaNova';
   color: black;
   margin: 20px 0;
 }
 .wrapper .wrapper-content .section.text p,
 .wrapper .wrapper-blackhole .section.text p {
-  font: 15px/28px 'ProximaNova';
+  font: 15px/24px 'ProximaNova';
   color: black;
 }
 .wrapper .wrapper-content .section.text p span,
@@ -3276,11 +3318,16 @@ body {
 .wrapper .wrapper-content .section.price_list_services .content_midlle_big h4,
 .wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big h4 {
   margin: 30px 0;
-  font-weight: bold;
+  font: bold 30px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.price_list_services .content_midlle_big p,
 .wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big p {
   color: black;
+}
+.wrapper .wrapper-content .section.price_list_services .content_midlle_big h2,
+.wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big h2 {
+  font-size: 36px;
+  text-align: left;
 }
 .wrapper .wrapper-content .section.price_list_services .content_midlle_big .head_price,
 .wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big .head_price {
@@ -4060,6 +4107,7 @@ body {
   margin-top: 60px;
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 30px;
+  padding-bottom: 25px;
 }
 .wrapper .wrapper-content .section.services_list.border-0,
 .wrapper .wrapper-blackhole .section.services_list.border-0 {
@@ -4135,19 +4183,15 @@ body {
 }
 .wrapper .wrapper-content .section.services_list .item .list ul li,
 .wrapper .wrapper-blackhole .section.services_list .item .list ul li {
-  margin: 8px 0;
+  margin-bottom: 5px;
 }
 .wrapper .wrapper-content .section.services_list .item .list ul li a,
 .wrapper .wrapper-blackhole .section.services_list .item .list ul li a {
   font-size: 13px;
 }
-.wrapper .wrapper-content .section.services_list .item .list ul li:first-child,
-.wrapper .wrapper-blackhole .section.services_list .item .list ul li:first-child {
-  margin-top: 0;
-}
-.wrapper .wrapper-content .section.services_list .item .list ul li::last-child,
-.wrapper .wrapper-blackhole .section.services_list .item .list ul li::last-child {
-  margin-bottom: 0;
+.wrapper .wrapper-content .section.services_list .item .list ul li:hover a,
+.wrapper .wrapper-blackhole .section.services_list .item .list ul li:hover a {
+  border-color: #57a8c650;
 }
 .wrapper .wrapper-content .section.services_list .item::before,
 .wrapper .wrapper-blackhole .section.services_list .item::before {
