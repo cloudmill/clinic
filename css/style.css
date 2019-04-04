@@ -17,6 +17,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'RUBSN';
+  src: url('../fonts/RUBSN.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'ProximaNova';
   src: url('../fonts/ProximaNova-Bold.ttf') format('truetype');
   font-weight: Bold;
@@ -734,23 +740,44 @@ body {
 .wrapper .wrapper-content .section .yellow-bg {
   background-color: #ffed7e;
 }
+.wrapper .wrapper-content .section .yellow-bg:hover {
+  background-color: #ffeb73;
+}
 .wrapper .wrapper-content .section .yellow-light-bg {
   background-color: #f6f7e8;
+}
+.wrapper .wrapper-content .section .yellow-light-bg:hover {
+  background-color: #f5f6d4;
 }
 .wrapper .wrapper-content .section .blue-light-bg {
   background-color: #ecf0f3;
 }
+.wrapper .wrapper-content .section .blue-light-bg:hover {
+  background-color: #d8f1e2;
+}
 .wrapper .wrapper-content .section .purpur-bg {
   background-color: #f4f2f4;
+}
+.wrapper .wrapper-content .section .purpur-bg:hover {
+  background-color: #f0e8f0;
 }
 .wrapper .wrapper-content .section .gray-green-light-bg {
   background-color: #d1e1d7;
 }
+.wrapper .wrapper-content .section .gray-green-light-bg:hover {
+  background-color: #c6e5d8;
+}
 .wrapper .wrapper-content .section .green-light-bg {
   background-color: #dbf1e8;
 }
+.wrapper .wrapper-content .section .green-light-bg:hover {
+  background-color: #c6e5d8;
+}
 .wrapper .wrapper-content .section .pink-bg {
   background-color: #ffd3ac;
+}
+.wrapper .wrapper-content .section .pink-bg:hover {
+  background-color: #feca9c;
 }
 .wrapper .wrapper-content .section .white-bg {
   background-color: #fff;
@@ -798,16 +825,19 @@ body {
   height: 35px;
   margin-bottom: 0;
   color: black;
-  font: 600 36px 'ProximaNova';
+  font: bold 36px 'ProximaNova';
 }
-.wrapper .wrapper-content .block_stocks .item .value p.price span {
+.wrapper .wrapper-content .block_stocks .item .value p.price span:first-child {
   font: 18px 'ProximaNova';
 }
-.wrapper .wrapper-content .block_stocks .item .value p.price span.pt {
+.wrapper .wrapper-content .block_stocks .item .value p.price span:first-child.pt {
   font: bold 30px 'pt-sans';
 }
 .wrapper .wrapper-content .block_stocks .item .value p.price + p {
   margin-top: 5px;
+}
+.wrapper .wrapper-content .block_stocks .item .value p.price span.rub {
+  font-family: "RUBSN";
 }
 .wrapper .wrapper-content .block_stocks .item.main {
   flex-basis: 58%;
@@ -868,6 +898,9 @@ body {
 .wrapper .wrapper-content .block_stocks .item.main .right .sale p {
   font: 30px 'ProximaNova';
   color: white;
+}
+.wrapper .wrapper-content .block_stocks .item.main .right .sale p span.rub {
+  font-family: "RUBSN";
 }
 .wrapper .wrapper-content .block_stocks .item.main.yellow_light_bg {
   background-color: #f6f7e8;
@@ -961,6 +994,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-25deg);
   background-color: #fff;
+}
+.wrapper .wrapper-content .block_stocks .item.sub .right .sale p span.rub {
+  font-family: "RUBSN";
 }
 .wrapper .wrapper-content .block_stocks .item.sub.img_center .left {
   width: 55%;
@@ -1404,6 +1440,7 @@ body {
 .wrapper .wrapper-blackhole .section.slider_block .content_big .slider button {
   top: 50%;
   transform: translate(0, -50%);
+  margin-top: -15px;
 }
 .wrapper .wrapper-content .section.slider_block .content_big .slider button.slick-prev,
 .wrapper .wrapper-blackhole .section.slider_block .content_big .slider button.slick-prev {
@@ -1502,12 +1539,6 @@ body {
 .wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item.w2 + .item a {
   font: bold 24px 'ProximaNova';
 }
-.wrapper .wrapper-content .section.services .content_big .block .item:hover,
-.wrapper .wrapper-blackhole .section.services .content_big .block .item:hover,
-.wrapper .wrapper-content .section.services .content_midlle_big .block .item:hover,
-.wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item:hover {
-  filter: saturate(2);
-}
 .wrapper .wrapper-content .section.services .content_big .block .item .row,
 .wrapper .wrapper-blackhole .section.services .content_big .block .item .row,
 .wrapper .wrapper-content .section.services .content_midlle_big .block .item .row,
@@ -1538,7 +1569,7 @@ body {
   display: grid;
   grid-auto-columns: calc(100% / 3);
   grid-auto-flow: column;
-  height: 400px;
+  height: 500px;
 }
 .wrapper .wrapper-content .section.about .content_big .row .col,
 .wrapper .wrapper-blackhole .section.about .content_big .row .col {
@@ -1568,14 +1599,22 @@ body {
 .wrapper .wrapper-content .section.about .content_big .row .col h1:after,
 .wrapper .wrapper-blackhole .section.about .content_big .row .col h1:after {
   content: 'Врачей';
-  font: bold 36px 'ProximaNova';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  font: bold 24px 'ProximaNova';
   margin-top: 15px;
   text-transform: uppercase;
+}
+.wrapper .wrapper-content .section.about .content_big .row .col:first-child h1::after,
+.wrapper .wrapper-blackhole .section.about .content_big .row .col:first-child h1::after {
+  font: bold 36px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.about .content_big .row .col p,
 .wrapper .wrapper-blackhole .section.about .content_big .row .col p {
   position: relative;
   z-index: 2;
+  max-width: 300px;
   font: 600 24px 'ProximaNova';
   text-align: center;
 }
@@ -1590,6 +1629,7 @@ body {
   bottom: 0;
   left: 0;
   max-height: 100%;
+  height: 100%;
   width: auto;
 }
 .wrapper .wrapper-content .section.about .content_big .row .col.img-bg h1:after,
@@ -1793,6 +1833,10 @@ body {
   width: calc(50% - 270px);
   padding: 100px 270px 100px 0;
 }
+.wrapper .wrapper-content .section.workers .content .left p,
+.wrapper .wrapper-blackhole .section.workers .content .left p {
+  color: #282828;
+}
 .wrapper .wrapper-content .section.workers .content .slider,
 .wrapper .wrapper-blackhole .section.workers .content .slider {
   height: 100%;
@@ -1903,7 +1947,7 @@ body {
   overflow: hidden;
   z-index: -1;
   min-height: 100%;
-  min-width: 100%;
+  min-width: 101%;
   height: auto;
   width: 100%;
   transform: translate(-50%, -50%);
@@ -5855,14 +5899,20 @@ body {
   .wrapper .wrapper-content .section.first .content p {
     font-size: 16px;
   }
+  .wrapper .wrapper-content .section.about .content_big .row {
+    height: 450px;
+  }
   .wrapper .wrapper-content .section.about .content_big .row .col h1 {
     font-size: 72px;
   }
   .wrapper .wrapper-content .section.about .content_big .row .col h1:after {
-    font-size: 20px;
+    font-size: 18px;
   }
   .wrapper .wrapper-content .section.about .content_big .row .col p {
     font-size: 18px;
+  }
+  .wrapper .wrapper-content .section.about .content_big .row .col:first-child h1::after {
+    font-size: 20px;
   }
   .wrapper .wrapper-content .section.workers .content .left {
     padding-right: 200px;
@@ -5939,6 +5989,9 @@ body {
   }
   .wrapper .wrapper-content .section.contacts_map .map {
     background-position: center center;
+  }
+  .wrapper .wrapper-content .section.about .content_big .row {
+    height: 400px;
   }
 }
 @media (max-width: 1100px) {
@@ -6722,6 +6775,9 @@ body {
     height: 150%;
     top: 0;
     transform: translate(-50%, 0);
+  }
+  .wrapper .wrapper-content .section.about .content_big .row {
+    height: 300px;
   }
 }
 @media (max-width: 950px) {
