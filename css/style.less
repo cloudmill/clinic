@@ -1039,7 +1039,7 @@ body{
                                 left: 50%;
                                 transition: all @time_a @cb;
                                 transform: translate(-50%,-50%);
-                                z-index: -1;
+                                z-index: 0;
                                 display: block;
                                 width: 100%;
                                 transform-origin: top left;
@@ -1458,6 +1458,7 @@ body{
                 h4{
                     color: white;
                     margin-bottom: 60px;
+                    max-width: 720px;
                 }
                 background-image: url(../img/blue_header_section_bg.png);
                 background-size: cover;
@@ -1531,10 +1532,12 @@ body{
                         font: bold 65px @font_proxi;
                         width: 450px;
                         margin-top: 0;
+                        margin-bottom: 37px;
                     }
                     p{
-                        font: 20px @font_proxi;
+                        font: 20px/30px @font_proxi;
                         width: 450px;
+                        margin-bottom: 55px;
                     }
                     a{
                         width: 200px;
@@ -1579,7 +1582,7 @@ body{
                         display: grid;
                         grid-auto-flow: row;
                         grid-template-rows:  240px 240px;
-                        grid-template-columns: 20% 20% 20% 20% 20%;
+                        grid-template-columns: 25% 24% 17% 17% 17%;
                         &.col-4{
                             grid-template-columns: 25% 25% 25% 25% ;
                         }
@@ -1594,9 +1597,17 @@ body{
                                 margin: 20px 0;
                                 text-align: center;
                                 margin-bottom: 0;
+                                
+                            }
+                            >a{
+                                
                             }
                             padding: 20px;
-                            
+                            &:first-child{
+                                a{
+                                    font: bold 24px @font_proxi;
+                                }
+                            }
                             &.h2{
                                 grid-row: span 2 / auto;
                                 a{
@@ -1613,10 +1624,21 @@ body{
                                 a{
                                     font: bold 24px @font_proxi;
                                 }
+                                &+.item{
+                                    a{
+                                        font: bold 24px @font_proxi;
+                                    }
+                                }
                             }
                             transition: all @time_a @cb;
                             &:hover{
                                 filter: saturate(2);
+                            }
+                            .row{
+                                margin-top: 60px;
+                                a{
+                                    margin:3px;
+                                }
                             }
                         }
                     }
@@ -3928,6 +3950,13 @@ body{
                             color: #d6e6ec;
                             text-transform: uppercase;
                             transition: all @time_a @cb;
+                            &.black{
+                                color: #aeaeae;
+                            }
+                            
+                        }
+                        &.hide{
+                            opacity: 0;
                         }
                         &:before{
                             content: '';
@@ -3937,6 +3966,8 @@ body{
                             border: 2px solid #d6e6ec;
                             border-radius: 50%;
                             position: absolute;
+                            transition: all @time_a @cb;
+                            opacity: inherit;
                             bottom: 3px;
                             left: 0;
                         }
@@ -3944,7 +3975,9 @@ body{
                             content: '';
                             position: absolute;
                             display: flex;
+                            transition: all @time_a @cb;
                             width: 0;
+                            opacity: inherit;
                             height: ~"calc(100% - 15px)";
                             left: 2.5px;
                             bottom: 15px;
@@ -3962,6 +3995,9 @@ body{
                             a{
                                 color: black;
                                 font-weight: bold;
+                                &.black{
+                                    color: black;
+                                }
                             }
                         }
                     }

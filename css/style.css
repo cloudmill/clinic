@@ -917,7 +917,7 @@ body {
   left: 50%;
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: 0;
   display: block;
   width: 100%;
   transform-origin: top left;
@@ -1301,6 +1301,7 @@ body {
 .wrapper .wrapper-blackhole .head_sections.blue h4 {
   color: white;
   margin-bottom: 60px;
+  max-width: 720px;
 }
 .wrapper .wrapper-content .head_sections.blue .breadcrumbs ul li,
 .wrapper .wrapper-blackhole .head_sections.blue .breadcrumbs ul li {
@@ -1372,11 +1373,13 @@ body {
   font: bold 65px 'ProximaNova';
   width: 450px;
   margin-top: 0;
+  margin-bottom: 37px;
 }
 .wrapper .wrapper-content .section.first .content p,
 .wrapper .wrapper-blackhole .section.first .content p {
-  font: 20px 'ProximaNova';
+  font: 20px/30px 'ProximaNova';
   width: 450px;
+  margin-bottom: 55px;
 }
 .wrapper .wrapper-content .section.first .content a,
 .wrapper .wrapper-blackhole .section.first .content a {
@@ -1428,7 +1431,7 @@ body {
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: 240px 240px;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 25% 24% 17% 17% 17%;
 }
 .wrapper .wrapper-content .section.services .content_big .block.col-4,
 .wrapper .wrapper-blackhole .section.services .content_big .block.col-4,
@@ -1456,6 +1459,12 @@ body {
   margin: 20px 0;
   text-align: center;
   margin-bottom: 0;
+}
+.wrapper .wrapper-content .section.services .content_big .block .item:first-child a,
+.wrapper .wrapper-blackhole .section.services .content_big .block .item:first-child a,
+.wrapper .wrapper-content .section.services .content_midlle_big .block .item:first-child a,
+.wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item:first-child a {
+  font: bold 24px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.services .content_big .block .item.h2,
 .wrapper .wrapper-blackhole .section.services .content_big .block .item.h2,
@@ -1487,11 +1496,29 @@ body {
 .wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item.w2 a {
   font: bold 24px 'ProximaNova';
 }
+.wrapper .wrapper-content .section.services .content_big .block .item.w2 + .item a,
+.wrapper .wrapper-blackhole .section.services .content_big .block .item.w2 + .item a,
+.wrapper .wrapper-content .section.services .content_midlle_big .block .item.w2 + .item a,
+.wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item.w2 + .item a {
+  font: bold 24px 'ProximaNova';
+}
 .wrapper .wrapper-content .section.services .content_big .block .item:hover,
 .wrapper .wrapper-blackhole .section.services .content_big .block .item:hover,
 .wrapper .wrapper-content .section.services .content_midlle_big .block .item:hover,
 .wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item:hover {
   filter: saturate(2);
+}
+.wrapper .wrapper-content .section.services .content_big .block .item .row,
+.wrapper .wrapper-blackhole .section.services .content_big .block .item .row,
+.wrapper .wrapper-content .section.services .content_midlle_big .block .item .row,
+.wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item .row {
+  margin-top: 60px;
+}
+.wrapper .wrapper-content .section.services .content_big .block .item .row a,
+.wrapper .wrapper-blackhole .section.services .content_big .block .item .row a,
+.wrapper .wrapper-content .section.services .content_midlle_big .block .item .row a,
+.wrapper .wrapper-blackhole .section.services .content_midlle_big .block .item .row a {
+  margin: 3px;
 }
 .wrapper .wrapper-content .section.services .content_midlle_big,
 .wrapper .wrapper-blackhole .section.services .content_midlle_big {
@@ -4320,6 +4347,14 @@ body {
   text-transform: uppercase;
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+.wrapper .wrapper-content .section.sidebar ul.sections li a.black,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li a.black {
+  color: #aeaeae;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.hide,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.hide {
+  opacity: 0;
+}
 .wrapper .wrapper-content .section.sidebar ul.sections li:before,
 .wrapper .wrapper-blackhole .section.sidebar ul.sections li:before {
   content: '';
@@ -4329,6 +4364,8 @@ body {
   border: 2px solid #d6e6ec;
   border-radius: 50%;
   position: absolute;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: inherit;
   bottom: 3px;
   left: 0;
 }
@@ -4337,7 +4374,9 @@ body {
   content: '';
   position: absolute;
   display: flex;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 0;
+  opacity: inherit;
   height: calc(100% - 15px);
   left: 2.5px;
   bottom: 15px;
@@ -4355,6 +4394,10 @@ body {
 .wrapper .wrapper-blackhole .section.sidebar ul.sections li.active a {
   color: black;
   font-weight: bold;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.active a.black,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.active a.black {
+  color: black;
 }
 .wrapper .wrapper-content .section.sec_in_sidebar,
 .wrapper .wrapper-blackhole .section.sec_in_sidebar {

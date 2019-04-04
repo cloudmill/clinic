@@ -27,10 +27,29 @@ $(document).scroll(function(e){
                         $('.section.sidebar').find('li').eq(j).removeClass('up')
                         $('.section.sidebar').find('li').eq(j).removeClass('active')
                     }
+                    
                 }
             }
         }
         
+        $('.section.sidebar li a').each(function(){
+            index = $(this).index();
+            if($(this).offset().top < $('.head_sections').eq(0).offset().top 
+            || $(this).eq(index).offset().top +$(this).eq(index).height()/2>$('.head_sections').eq(0).offset().top +$('.head_sections').eq(0).height()+120){
+                $(this).eq(index).addClass('black');
+            }
+            else{
+                $(this).eq(index).removeClass('black');
+            }
+
+            if($(this).eq(index).offset().top + $(this).eq(index).height() >$('.slider_block').eq(0).offset().top){
+                $(this).eq(index).parent().addClass('hide');
+            }
+            else{
+                $(this).eq(index).parent().removeClass('hide');
+            }
+        })
+
     }
     /* var top = $(window).scrollTop();
     if(last_scroll > top){
@@ -425,7 +444,7 @@ function convas(){
                     ctx_temp.save();
                     
                     ctx_temp.translate(this.x + Math.sin((x + (t / 10)) / 100) * 5, this.y + Math.sin((10 + x + (t / 10)) / 100) * 2);
-                    ctx_temp.rotate(this.r * Math.PI / 180);
+                    //ctx_temp.rotate(this.r * Math.PI / 180);
                     
                     line(-1, -1, 1, 1, '#fff');
                     line(1, -1, -1, 1, '#fff');
@@ -436,9 +455,9 @@ function convas(){
         };
         ctx[i] = ctx_temp;
 
-        for(var x = 0; x < Canvas[i].width; x++) {
-            for(var y = 0; y < Canvas[i].height; y++) {
-                if(Math.round(Math.random() * 5000) == 1) {
+        for(var x = 10; x < Canvas[i].width-10; x++) {
+            for(var y = 10; y < Canvas[i].height-10; y++) {
+                if(Math.round(Math.random() * 8000) == 1) {
                     var s = ((Math.random() * 5) + 1) / 8;
                     if(Math.round(Math.random()) == 1)
                         elements[i].push(presets[i].o(x, y, s, 0, 0));
