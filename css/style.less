@@ -944,6 +944,7 @@ body{
                         }
                         span.rub{
                             font-family: "RUBSN";
+                            font-weight: normal;
                         }
                     }
                 }
@@ -1254,7 +1255,7 @@ body{
                             margin-bottom: 0;
                             color: black;
                             font: bold 36px @font_proxi;
-                            span{
+                            span:first-child{
                                 font: 18px @font_proxi;
                                 &.pt{
                                     font: bold 30px @font_pt;
@@ -1580,6 +1581,7 @@ body{
                         font: 20px/30px @font_proxi;
                         width: 450px;
                         margin-bottom: 55px;
+                        color: black;
                     }
                     a{
                         width: 200px;
@@ -1853,7 +1855,7 @@ body{
                                 display: block;
                                 position: absolute;
                                 z-index: -1;
-                                height: 230px;
+                                height: 250px;
                                 width: 200%;
                                 bottom: 0;
                                 right: ~'calc(50% - 100px)';
@@ -1946,7 +1948,6 @@ body{
                         .slick-active{
                             .item{
                                 img{
-                                    bottom: 0;
                                     opacity: 1;
                                 }
                             }
@@ -1964,7 +1965,7 @@ body{
                             img{
                                 position: absolute;
                                 transition: all @time_a*3 @cb;
-                                bottom: -50%;
+                                bottom: 0;
                                 opacity: 0;
                                 width: auto;
                                 left: 50%;
@@ -2527,6 +2528,7 @@ body{
             }
             &.rooms{
                 margin-bottom: 60px;
+                margin-top: 70px;
                 .row{
                     display: flex;
                     height: 450px;
@@ -2544,6 +2546,7 @@ body{
                         }
                         p{
                             margin-top: 35px;
+                            color: #282828;
                         }
                     }
                     .slider{
@@ -3152,7 +3155,7 @@ body{
                                     margin-bottom: 0;
                                     color: black;
                                     font: bold 36px @font_proxi;
-                                    span{
+                                    span:first-child{
                                         font: 18px @font_proxi;
                                         &.pt{
                                             font: bold 36px @font_pt;
@@ -3197,7 +3200,7 @@ body{
                     margin-top: 20px;
                     h4{
                         margin: 30px 0;
-                        font: bold 30px @font_proxi;
+                        font: bold 18px/32px @font_proxi;
                     }
                     p{
                         color: black;
@@ -3994,6 +3997,7 @@ body{
                         padding-left: 30px;
                         display: flex;
                         align-items: flex-start;
+                        transition: all @time_a @cb;
                         &:first-child{
                             padding-top: 0px;
                             &:after{
@@ -4002,26 +4006,44 @@ body{
                         }
                         a{
                             font: 11px @font_proxi;
-                            color: #d6e6ec;
+                            color: #ffffff;
                             text-transform: uppercase;
-                            transition: all @time_a @cb;
-                            &.black{
-                                color: #aeaeae;
-                            }
+                            transition: all @time_a/2 @cb;
                             
                         }
+                        &.black{
+                            a{
+                                color: #aeaeae;
+                            }
+                            &:before{
+                                border: 2px solid #d6e6ec;
+                            }
+                            &:after{
+                                border-left: 4px dotted #d6e6ec;
+                            }
+                        }
                         &.hide{
-                            opacity: 0;
+                            a{
+                                opacity: 0;
+                            }
+                            &:after{
+                                opacity: 0;
+                                height: 0;
+                                bottom: 100%;
+                            }
+                            &:before{
+                                opacity: 0;
+                            }
                         }
                         &:before{
                             content: '';
                             display: block;
                             height: 5px;
                             width: 5px;
-                            border: 2px solid #d6e6ec;
+                            border: 2px solid #ffffff;
                             border-radius: 50%;
                             position: absolute;
-                            transition: all @time_a @cb;
+                            transition: all @time_a/2 @cb;
                             opacity: inherit;
                             bottom: 3px;
                             left: 0;
@@ -4036,7 +4058,7 @@ body{
                             height: ~"calc(100% - 15px)";
                             left: 2.5px;
                             bottom: 15px;
-                            border-left: 4px dotted #d6e6ec;
+                            border-left: 4px dotted #ffffff;
                         }
                         &.up{
                             &:after{

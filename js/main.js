@@ -36,10 +36,10 @@ $(document).scroll(function(e){
             index = $(this).index();
             if($(this).offset().top < $('.head_sections').eq(0).offset().top 
             || $(this).eq(index).offset().top +$(this).eq(index).height()/2>$('.head_sections').eq(0).offset().top +$('.head_sections').eq(0).height()+120){
-                $(this).eq(index).addClass('black');
+                $(this).eq(index).parent().addClass('black');
             }
             else{
-                $(this).eq(index).removeClass('black');
+                $(this).eq(index).parent().removeClass('black');
             }
 
             if($(this).eq(index).offset().top + $(this).eq(index).height() >$('.slider_block').eq(0).offset().top){
@@ -101,6 +101,7 @@ function sliders(){
             slidesToScroll: 1,
             speed: 1000,
             arrows: true,
+            fade: true,
             dots : false,
             infinite: false,
         })
@@ -225,7 +226,7 @@ function custom(){
     
     //show more
     $('.show-more-container > li, .show-more-container > div, .show-more-container > a').hide()
-    var show_more_count = 2;
+    var show_more_count = 6;
     var show_more_step = 2;
     for(i=0;i<show_more_count;i++){
         $('.show-more-container > li, .show-more-container > div, .show-more-container > a').eq(i).show()

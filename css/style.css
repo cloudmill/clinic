@@ -838,6 +838,7 @@ body {
 }
 .wrapper .wrapper-content .block_stocks .item .value p.price span.rub {
   font-family: "RUBSN";
+  font-weight: normal;
 }
 .wrapper .wrapper-content .block_stocks .item.main {
   flex-basis: 58%;
@@ -1097,10 +1098,10 @@ body {
   color: black;
   font: bold 36px 'ProximaNova';
 }
-.wrapper .wrapper-content .slider_mobile .block_stocks .item .value p.price span {
+.wrapper .wrapper-content .slider_mobile .block_stocks .item .value p.price span:first-child {
   font: 18px 'ProximaNova';
 }
-.wrapper .wrapper-content .slider_mobile .block_stocks .item .value p.price span.pt {
+.wrapper .wrapper-content .slider_mobile .block_stocks .item .value p.price span:first-child.pt {
   font: bold 30px 'pt-sans';
 }
 .wrapper .wrapper-content .slider_mobile .block_stocks .item .value p.price + p {
@@ -1416,6 +1417,7 @@ body {
   font: 20px/30px 'ProximaNova';
   width: 450px;
   margin-bottom: 55px;
+  color: black;
 }
 .wrapper .wrapper-content .section.first .content a,
 .wrapper .wrapper-blackhole .section.first .content a {
@@ -1738,7 +1740,7 @@ body {
   display: block;
   position: absolute;
   z-index: -1;
-  height: 230px;
+  height: 250px;
   width: 200%;
   bottom: 0;
   right: calc(50% - 100px);
@@ -1843,7 +1845,6 @@ body {
 }
 .wrapper .wrapper-content .section.workers .content .slider .slick-active .item img,
 .wrapper .wrapper-blackhole .section.workers .content .slider .slick-active .item img {
-  bottom: 0;
   opacity: 1;
 }
 .wrapper .wrapper-content .section.workers .content .slider .slick-slide > div,
@@ -1862,7 +1863,7 @@ body {
 .wrapper .wrapper-blackhole .section.workers .content .slider .item img {
   position: absolute;
   transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
-  bottom: -50%;
+  bottom: 0;
   opacity: 0;
   width: auto;
   left: 50%;
@@ -2499,6 +2500,7 @@ body {
 .wrapper .wrapper-content .section.rooms,
 .wrapper .wrapper-blackhole .section.rooms {
   margin-bottom: 60px;
+  margin-top: 70px;
 }
 .wrapper .wrapper-content .section.rooms .row,
 .wrapper .wrapper-blackhole .section.rooms .row {
@@ -2523,6 +2525,7 @@ body {
 .wrapper .wrapper-content .section.rooms .row .text p,
 .wrapper .wrapper-blackhole .section.rooms .row .text p {
   margin-top: 35px;
+  color: #282828;
 }
 .wrapper .wrapper-content .section.rooms .row .slider,
 .wrapper .wrapper-blackhole .section.rooms .row .slider {
@@ -3366,12 +3369,12 @@ body {
   color: black;
   font: bold 36px 'ProximaNova';
 }
-.wrapper .wrapper-content .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span,
-.wrapper .wrapper-blackhole .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span {
+.wrapper .wrapper-content .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span:first-child,
+.wrapper .wrapper-blackhole .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span:first-child {
   font: 18px 'ProximaNova';
 }
-.wrapper .wrapper-content .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span.pt,
-.wrapper .wrapper-blackhole .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span.pt {
+.wrapper .wrapper-content .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span:first-child.pt,
+.wrapper .wrapper-blackhole .section.discount_detail .content_midlle_big .block_stocks .item .value p.price span:first-child.pt {
   font: bold 36px 'pt-sans';
 }
 .wrapper .wrapper-content .section.discount_detail .content_midlle_big .block_stocks .item .value p.price + p,
@@ -3411,7 +3414,7 @@ body {
 .wrapper .wrapper-content .section.price_list_services .content_midlle_big h4,
 .wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big h4 {
   margin: 30px 0;
-  font: bold 30px 'ProximaNova';
+  font: bold 18px/32px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.price_list_services .content_midlle_big p,
 .wrapper .wrapper-blackhole .section.price_list_services .content_midlle_big p {
@@ -4375,6 +4378,7 @@ body {
   padding-left: 30px;
   display: flex;
   align-items: flex-start;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .wrapper .wrapper-content .section.sidebar ul.sections li:first-child,
 .wrapper .wrapper-blackhole .section.sidebar ul.sections li:first-child {
@@ -4387,16 +4391,34 @@ body {
 .wrapper .wrapper-content .section.sidebar ul.sections li a,
 .wrapper .wrapper-blackhole .section.sidebar ul.sections li a {
   font: 11px 'ProximaNova';
-  color: #d6e6ec;
+  color: #ffffff;
   text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.wrapper .wrapper-content .section.sidebar ul.sections li a.black,
-.wrapper .wrapper-blackhole .section.sidebar ul.sections li a.black {
+.wrapper .wrapper-content .section.sidebar ul.sections li.black a,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.black a {
   color: #aeaeae;
 }
-.wrapper .wrapper-content .section.sidebar ul.sections li.hide,
-.wrapper .wrapper-blackhole .section.sidebar ul.sections li.hide {
+.wrapper .wrapper-content .section.sidebar ul.sections li.black:before,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.black:before {
+  border: 2px solid #d6e6ec;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.black:after,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.black:after {
+  border-left: 4px dotted #d6e6ec;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.hide a,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.hide a {
+  opacity: 0;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.hide:after,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.hide:after {
+  opacity: 0;
+  height: 0;
+  bottom: 100%;
+}
+.wrapper .wrapper-content .section.sidebar ul.sections li.hide:before,
+.wrapper .wrapper-blackhole .section.sidebar ul.sections li.hide:before {
   opacity: 0;
 }
 .wrapper .wrapper-content .section.sidebar ul.sections li:before,
@@ -4405,10 +4427,10 @@ body {
   display: block;
   height: 5px;
   width: 5px;
-  border: 2px solid #d6e6ec;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   position: absolute;
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: inherit;
   bottom: 3px;
   left: 0;
@@ -4424,7 +4446,7 @@ body {
   height: calc(100% - 15px);
   left: 2.5px;
   bottom: 15px;
-  border-left: 4px dotted #d6e6ec;
+  border-left: 4px dotted #ffffff;
 }
 .wrapper .wrapper-content .section.sidebar ul.sections li.up:after,
 .wrapper .wrapper-blackhole .section.sidebar ul.sections li.up:after {
