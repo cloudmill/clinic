@@ -273,6 +273,10 @@ function custom(){
     })
 }
 function blackhole(){
+    $('.list-photo .item').fancybox({
+    });
+    $('.list-documents .item').fancybox({
+    });
     $('.wrapper-blackhole').height($(window).height())
     $(document).on('click','.js-popup',function(e){
         e.preventDefault();
@@ -281,39 +285,7 @@ function blackhole(){
         if($('.wrapper-blackhole').find('#'+$(this).data('popup-name')).hasClass('small-popup')){
             $('.wrapper-blackhole > .popup-close').hide()
         }
-        console.log($(this).data('popup-name'))
         $('.wrapper-blackhole').addClass('active');
-        
-        if($(this).data('popup-name') == 'photo-gallery'){
-            var photo_gallery = document.getElementById("photo-gallery");;
-            photo_gallery.innerHTML = '';
-            var items = '<div class="content_midlle_big slider arrow-req">';
-            for(i = 0;i<$(this).parent().find('.item').length;i++){
-                var img = '<img src="'+ $(this).parent().find('.item').eq(i).find('img').attr('src') +'">';
-                var p = "<p>"+ $(this).parent().find('.item').eq(i).find('p').text() +"</p>"
-                var item = "<div class='item'>"+ img + p +"</div>"
-                console.log(item)
-                items += item;
-            }
-            items += "</div>";
-            photo_gallery.innerHTML += items;
-            $(document).find('#photo-gallery .slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                speed: 1000,
-                arrows: true,
-                dots : true,
-                infinite: false,
-            })
-            $(this).index()
-            $(document).find('#photo-gallery .slider').slick('slickGoTo',$(this).index())
-        }
-        if($(this).data('popup-name') == 'zoom'){
-            var zoom= document.getElementById("zoom");
-            zoom.innerHTML = '';
-            var img = '<img src='+ $(this).find('img').attr('src') +'>';
-            zoom.innerHTML += img;
-        }
     })
     $(document).on('click','.popup-close',function(){
         $('.wrapper-blackhole').find('.item-popup').removeClass('active')
@@ -333,7 +305,6 @@ function blackhole(){
         else{
             $(this).parent().find('input').focus();
         }
-        
     })
     $(document).on('keyup','.mini_search + input , .block_menu .search input', function(event){
         if(event.keyCode == 13 && $(this).val() !=''){
@@ -347,15 +318,20 @@ function blackhole(){
     })
 }
 function inputs(){
-    $('#date').daterangepicker({
-        singleDatePicker: true,
-        timePicker: true,
-        timePicker24Hour: true,
-        locale: {
-            format: 'DD.MM.YY в hh:mm'
-            }
-    });
-    $('.phone-input').mask("+7 (999) 99-99-999");
+    if($('#date').length>0){
+        $('#date').daterangepicker({
+            singleDatePicker: true,
+            timePicker: true,
+            timePicker24Hour: true,
+            locale: {
+                format: 'DD.MM.YY в hh:mm'
+                }
+        });
+    }
+    if(('.phone-input').length>0){
+        $('.phone-input').mask("+7 (999) 99-99-999");
+    }
+    
     $(document).on('change','#date',function(){
         $(this).parent().parent().find('input[name="time"]#sometimes').prop('checked', true)
     })
