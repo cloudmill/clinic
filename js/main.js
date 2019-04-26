@@ -2,8 +2,8 @@ $(document).ready(function(){
     sliders();
     custom();
     find_in_select();
-    blackhole();
     convas();
+    blackhole();
     inputs();
 })
 var last_scroll = 0;
@@ -273,6 +273,7 @@ function custom(){
     })
 }
 function blackhole(){
+    
     $('.list-photo .item').fancybox({
     });
     $('.list-documents .item').fancybox({
@@ -356,6 +357,7 @@ function find_in_select(){
 
 function convas(){
     $('.block_stocks .item .right .img img').after('<canvas class="canvas"></canvas>')
+    $('.first img').after('<canvas class="canvas" data-color="#d0e0df" data-count="80000"></canvas>')
     if(document.getElementsByClassName('canvas').length > 0){
         var Canvas = document.getElementsByClassName('canvas');
     }
@@ -370,12 +372,13 @@ function convas(){
     };
     window.addEventListener('resize', resize);
     resize();
-    var ctx = [];
-    var elements = [];
-    var presets = [];
+    var ctx = [],
+        elements = [],
+        presets = [],
+        size = 15,//px
+        density = 8000;
 
     for(i=0;i< Canvas.length;i++){
-        
         var ctx_temp = Canvas[i].getContext('2d');
         elements[i] = [];
         presets[i] = {};
@@ -390,11 +393,15 @@ function convas(){
                 draw: function(ctx_temp, t) {
                     this.x += this.dx;
                     this.y += this.dy;
-                    
                     ctx_temp.beginPath();
-                    ctx_temp.arc(this.x + + Math.sin((50 + x + (t / 10)) / 100) * 3, this.y + + Math.sin((45 + x + (t / 10)) / 100) * 4, this.r, 0, 2 * Math.PI, false);
+                    ctx_temp.arc(this.x + Math.sin((50 + x + (t / 10)) / 100) * 3, this.y + Math.sin((45 + x + (t / 10)) / 100) * 4, this.r, 0, 2 * Math.PI, false);
                     ctx_temp.lineWidth = this.w;
-                    ctx_temp.strokeStyle = '#fff';
+                    if($('canvas').eq(i).attr('data-color')){
+                        ctx_temp.strokeStyle = $('canvas').eq(i).attr('data-color')
+                    }
+                    else{
+                        ctx_temp.strokeStyle = '#fff'
+                    }
                     ctx_temp.stroke();
                 }
             }
@@ -425,25 +432,33 @@ function convas(){
                         ctx_temp.strokeStyle = c;
                         ctx_temp.stroke();
                     };
-                    
                     ctx_temp.save();
-                    
                     ctx_temp.translate(this.x + Math.sin((x + (t / 10)) / 100) * 5, this.y + Math.sin((10 + x + (t / 10)) / 100) * 2);
-                    //ctx_temp.rotate(this.r * Math.PI / 180);
-                    
-                    line(-1, -1, 1, 1, '#fff');
-                    line(1, -1, -1, 1, '#fff');
+                    ctx_temp.rotate(Math.PI /4);
+                    var color;
+                    if($('canvas').eq(i).attr('data-color')){
+                        color = $('canvas').eq(i).attr('data-color')
+                    }
+                    else{
+                        color = '#fff'
+                    }
+                    line(-1, -1, 1, 1, color);
+                    line(1, -1, -1, 1, color);
                     
                     ctx_temp.restore();
                 }
             }
         };
         ctx[i] = ctx_temp;
-
+        var density_t = density;
+        if($('canvas').eq(i).attr('data-count')){
+            density_t = $('canvas').eq(i).attr('data-count')
+        }
+        console.log(density_t)
+        s = size/25;
         for(var x = 10; x < Canvas[i].width-10; x++) {
             for(var y = 10; y < Canvas[i].height-10; y++) {
-                if(Math.round(Math.random() * 8000) == 1) {
-                    var s = ((Math.random() * 5) + 1) / 8;
+                if(Math.round(Math.random() * density_t) == 1) {
                     if(Math.round(Math.random()) == 1)
                         elements[i].push(presets[i].o(x, y, s, 0, 0));
                     else
@@ -452,7 +467,7 @@ function convas(){
             }
         }
     }
-
+    
     setInterval(function() {
         for(i=0;i< Canvas.length;i++){
             ctx[i].clearRect(0, 0, Canvas[i].width, Canvas[i].height);
@@ -461,7 +476,7 @@ function convas(){
                 elements[i][e].draw(ctx[i], time);
         }
         
-    }, 10);
+    }, 50);
     
 }
 function range(){
