@@ -1596,8 +1596,8 @@ body {
   flex-direction: column;
   position: relative;
 }
-.wrapper .wrapper-content .section.about .content_big .row .col:first-child h1::after,
-.wrapper .wrapper-blackhole .section.about .content_big .row .col:first-child h1::after {
+.wrapper .wrapper-content .section.about .content_big .row .col:first-child h1 span,
+.wrapper .wrapper-blackhole .section.about .content_big .row .col:first-child h1 span {
   font: bold 36px 'ProximaNova';
 }
 .wrapper .wrapper-content .section.about .content_big .row .col.img-bg,
@@ -1613,14 +1613,6 @@ body {
   max-height: 100%;
   height: 100%;
   width: auto;
-}
-.wrapper .wrapper-content .section.about .content_big .row .col.img-bg h1:after,
-.wrapper .wrapper-blackhole .section.about .content_big .row .col.img-bg h1:after {
-  content: 'лет';
-}
-.wrapper .wrapper-content .section.about .content_big .row .col:last-child h1:after,
-.wrapper .wrapper-blackhole .section.about .content_big .row .col:last-child h1:after {
-  content: 'кабинетов';
 }
 .wrapper .wrapper-content .section.about .content_big .row .col object,
 .wrapper .wrapper-blackhole .section.about .content_big .row .col object {
@@ -1638,9 +1630,8 @@ body {
   margin-bottom: 0;
   align-items: flex-start;
 }
-.wrapper .wrapper-content .section.about .content_big .row .col h1:after,
-.wrapper .wrapper-blackhole .section.about .content_big .row .col h1:after {
-  content: 'Врачей';
+.wrapper .wrapper-content .section.about .content_big .row .col h1 span,
+.wrapper .wrapper-blackhole .section.about .content_big .row .col h1 span {
   position: absolute;
   left: 100%;
   top: 0;
@@ -1764,6 +1755,7 @@ body {
 .wrapper .wrapper-blackhole .section.sale {
   position: relative;
   margin-bottom: 130px;
+  min-height: 600px;
 }
 .wrapper .wrapper-content .section.sale.sale_bg,
 .wrapper .wrapper-blackhole .section.sale.sale_bg {
@@ -4879,9 +4871,15 @@ body {
 }
 .wrapper .wrapper-blackhole .popup-close {
   position: absolute;
+  width: 18px;
+  height: 18px;
   top: 30px;
   right: 30px;
   cursor: pointer;
+}
+.wrapper .wrapper-blackhole .popup-close img {
+  width: 100%;
+  height: 100%;
 }
 .wrapper .wrapper-blackhole .item-popup {
   display: none;
@@ -5008,9 +5006,12 @@ body {
   user-select: none;
   height: 80%;
   width: 80%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+}
+.wrapper .wrapper-blackhole .item-popup#zoom.active {
+  display: flex;
 }
 .wrapper .wrapper-blackhole .item-popup#zoom img {
   max-width: 100%;
@@ -6148,7 +6149,7 @@ body {
   .wrapper .wrapper-content .section.about .content_big .row .col h1 {
     font-size: 72px;
   }
-  .wrapper .wrapper-content .section.about .content_big .row .col h1:after {
+  .wrapper .wrapper-content .section.about .content_big .row .col h1 span {
     font-size: 18px;
   }
   .wrapper .wrapper-content .section.about .content_big .row .col p {
